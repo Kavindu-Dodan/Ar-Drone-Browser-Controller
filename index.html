@@ -1,0 +1,89 @@
+<!!DOCTYPE html>
+<html>
+
+<!--Header-->
+<head>
+
+<link rel="stylesheet" type="text/css"  href="my.css"/>
+
+</head>
+
+<!--Body-->
+<body>
+
+<div id="topbutton">
+
+<button id="takeoff" type="button">Take Off</button>
+<button id="land" type="button">Land</button>
+<div id="em">
+	<input type="image" name="emergency" id="emergency" src="image/stop.jpg" />
+	<p>Emergency stop.!</p>
+</div>
+</div>
+
+<div id="video">
+	<!--
+	<video id="dronefeed" autoplay></video>
+	-->
+</div>
+
+<div id="controll">
+
+<p> Note: Controls are comapared to the drone camara</p>
+
+	<div id="joystick">
+		<table border="0">
+			<tr>
+				<td><button id="up" class="conkeys type="UP">Up</button></td>
+				<td></td>
+				<td><button id="front" class="movekeys" type="button">Front</button></td>
+				<td></td>
+				<td><button id="down" class="conkeys" type="button">Down</button></td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td><button id="left" class="movekeys" type="button">Left </button></td>
+				<td><button id="stop" class="stop" type="button">STOP </button></td>
+				<td><button id="right" class="movekeys" type="button">Right</button></td>
+				<td></td>
+			</tr>
+			
+			<tr>
+				<td><button id="counterclockwise" class="conkeys" type="UP">counter</button></td>
+				<td></td>
+				<td><button id="back" class="movekeys" type="button">Back</button></td>
+				<td></td>
+				<td><button id="clockwise" class="conkeys" type="UP">ClockW.</button></td>
+			</tr>
+		</table>
+	</div>
+	
+</div>
+
+<div id="navdata">
+	<div>Status : <span id="status">Not Connected</span></div>
+	<div>Battery : <span id="batteryPercentage">-</span></div>
+    <!-- TO DO LIST
+	<div>Direction: <span id="clockwiseDegrees"></span>°</div>
+    <div>front/back: <span id="frontBackDegrees"></span>°</div>
+    <div>left/right: <span id="leftRightDegrees"></span>°</div>
+    <div>Altitude: <span id="altitudeMeters"></span>m</div>
+    <div>Velocity (x/y/z): <span id="xVelocity"></span> / <span id="yVelocity"></span> / <span id="zVelocity"></span></div>
+	-->
+</div>
+
+<!--Jquery google/ down .lib-->
+<script src="jquery.min.js"></script>
+<script src="nodecopter-client.js"></script>
+<!--Client responses-jquery-->	
+<script src="client.js"></script>
+<script src="socket.io.min.js"></script>
+<script>
+	startArDRoneStream()
+	controller();
+</script>
+
+</body>
+
+</html>
